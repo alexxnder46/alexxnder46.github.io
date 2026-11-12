@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El derecho en la década de 2030</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f1a2e; --ink2:#18263f; --paper:#f1f3f6; --white:#fff;
+  --text:#1a2233; --soft:#5b667a; --line:#d5dae3;
+  --cobalt:#2f5bff; --sage:#7fb69a;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-snap-type:y proximity}
+body{margin:0;font-family:var(--sans);color:var(--text);background:var(--paper);line-height:1.6}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px}
+a{color:inherit}
+
+/* Barra de progreso y navegación */
+#progreso{position:fixed;top:0;left:0;height:4px;width:0;background:var(--cobalt);z-index:50;transition:width .2s}
+#nav{position:fixed;right:14px;top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;gap:10px;padding:12px 9px;border-radius:30px;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);box-shadow:0 2px 14px rgba(15,26,46,.25)}
+#nav a{width:12px;height:12px;border-radius:50%;border:2px solid var(--ink);display:block;transition:background .2s,transform .2s}
+#nav a.activo{background:var(--cobalt);border-color:var(--cobalt);transform:scale(1.3)}
+#modo{position:fixed;left:14px;bottom:14px;z-index:40;font:500 .85rem var(--sans);padding:.55rem .9rem;border-radius:999px;border:0;background:var(--white);color:var(--ink);cursor:pointer;box-shadow:0 2px 14px rgba(15,26,46,.25)}
+
+/* Secciones */
+section{min-height:100vh;scroll-snap-align:start;padding:5rem 1.25rem;display:flex;align-items:center}
+.caja{width:100%;max-width:1080px;margin:0 auto;padding-right:2.5rem}
+.oscura{background:var(--ink);color:#e9edf5}
+.oscura .soft{color:#a9b4c9}
+h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spacing:-.01em}
+.intro{max-width:62ch;color:var(--soft);margin:0 0 2rem;font-size:1.05rem}
+.oscura .intro{color:#a9b4c9}
+
+/* Portada */
+#inicio{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--ink) 55%,var(--ink2))}
+#inicio .gigante{position:absolute;right:-1rem;bottom:-3rem;font:600 clamp(9rem,30vw,26rem)/1 var(--serif);color:transparent;-webkit-text-stroke:2px rgba(127,182,154,.35);user-select:none;pointer-events:none}
+#inicio h1{font:600 clamp(2.4rem,6.5vw,5rem)/1.04 var(--serif);margin:0 0 1.2rem;letter-spacing:-.02em;max-width:15ch}
+#inicio p{max-width:58ch;font-size:1.15rem;color:#c6cfdf;margin:0 0 2rem}
+.btn{display:inline-block;font:600 1rem var(--sans);padding:.8rem 1.4rem;border-radius:8px;background:var(--cobalt);color:#fff;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{background:#4a72ff}
+.btn.sec{background:transparent;border:1.5px solid #5b6c8f;margin-left:.6rem}
+#inicio .caja>*{animation:entra .8s both}
+#inicio h1{animation-delay:.05s}#inicio p{animation-delay:.2s}#inicio .acciones{animation-delay:.35s}
+@keyframes entra{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* Pestañas */
+.tabs{display:grid;grid-template-columns:280px 1fr;gap:1.5rem}
+[role=tablist]{display:flex;flex-direction:column;gap:.6rem}
+[role=tab]{--c:var(--cobalt);text-align:left;font:600 1rem var(--sans);padding:1rem 1.1rem;border-radius:10px;border:1.5px solid var(--line);background:var(--white);color:var(--text);cursor:pointer;border-left:6px solid var(--c);transition:transform .2s,box-shadow .2s}
+[role=tab]:hover{transform:translateX(4px)}
+[role=tab][aria-selected=true]{background:var(--ink);color:#fff;border-color:var(--ink);border-left-color:var(--c);box-shadow:0 8px 24px rgba(15,26,46,.2)}
+[role=tabpanel]{--c:var(--cobalt);background:var(--white);border:1.5px solid var(--line);border-top:6px solid var(--c);border-radius:10px;padding:2rem}
+[role=tabpanel][hidden]{display:none}
+[role=tabpanel] h3{font:600 1.7rem/1.2 var(--serif);margin:0 0 1.2rem}
+[role=tabpanel] ul{margin:0;padding:0;list-style:none;display:grid;gap:1rem}
+[role=tabpanel] li{padding-left:1.4rem;position:relative}
+[role=tabpanel] li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:8px;border-radius:50%;background:var(--c)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem}
+.chip{font-size:.85rem;padding:.3rem .8rem;border-radius:999px;background:var(--paper);border:1px solid var(--line)}
+.panel a.fuente{display:inline-block;margin-top:1.2rem;font-size:.9rem;color:var(--cobalt)}
+
+/* Video */
+.video-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:1.5rem;align-items:start}
+.marco{aspect-ratio:16/9;background:#050a14;border-radius:12px;overflow:hidden;border:1.5px solid #2c3d5e;display:grid;place-items:center;text-align:center;color:#a9b4c9}
+.marco iframe{width:100%;height:100%;border:0}
+.vacio{padding:1.5rem}
+.vacio strong{display:block;font:600 1.4rem var(--serif);color:#fff;margin-bottom:.4rem}
+.guia{background:var(--ink2);border:1.5px solid #2c3d5e;border-radius:12px;padding:1.4rem}
+.guia h3{font:600 1.25rem var(--serif);margin:0 0 .8rem;color:#fff}
+.guia ol{margin:0 0 1.2rem;padding-left:1.2rem;font-size:.95rem;color:#c6cfdf;display:grid;gap:.5rem}
+.guia code{background:#0b1426;padding:.1rem .4rem;border-radius:4px;font-size:.85em;color:var(--sage)}
+.guia label{display:block;font-size:.85rem;margin-bottom:.4rem;color:#a9b4c9}
+.fila{display:flex;gap:.5rem}
+.fila input{flex:1;min-width:0;font:inherit;padding:.65rem .8rem;border-radius:8px;border:1.5px solid #3a4d73;background:#0b1426;color:#fff}
+#msg{font-size:.85rem;margin:.5rem 0 0;min-height:1.2em;color:#ff9b9b}
+
+/* Debate */
+.interruptor{display:inline-flex;background:var(--white);border:1.5px solid var(--line);border-radius:999px;padding:5px;margin-bottom:1.5rem}
+.interruptor button{font:600 .95rem var(--sans);padding:.65rem 1.3rem;border:0;border-radius:999px;background:transparent;color:var(--soft);cursor:pointer}
+.interruptor button[aria-pressed=true]{background:var(--ink);color:#fff}
+.postura{background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:2rem;max-width:760px}
+.postura[hidden]{display:none}
+.postura h3{font:600 1.6rem/1.2 var(--serif);margin:0 0 .8rem}
+.postura p{margin:0 0 .8rem}
+.etiqueta{display:inline-block;font-size:.85rem;font-weight:600;padding:.25rem .8rem;border-radius:999px;margin-bottom:.9rem}
+.etiqueta.rad{background:#ffe4e0;color:#8a2b1f}.etiqueta.con{background:#dff3e8;color:#1c6a45}
+.medidor{height:10px;background:var(--line);border-radius:6px;overflow:hidden;margin-top:1rem}
+.medidor i{display:block;height:100%;background:var(--cobalt);width:0;transition:width .6s}
+
+/* Fuentes */
+.fuentes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:0;padding:0;list-style:none}
+.fuentes a{display:block;height:100%;padding:1.1rem 1.2rem;border:1.5px solid #2c3d5e;border-radius:10px;text-decoration:none;background:var(--ink2);transition:border-color .2s,transform .2s}
+.fuentes a:hover{border-color:var(--sage);transform:translateY(-3px)}
+.fuentes b{display:block;color:#fff;margin-bottom:.2rem}
+.fuentes span{font-size:.85rem;color:#a9b4c9}
+
+@media (max-width:860px){
+  .tabs,.video-grid{grid-template-columns:1fr}
+  [role=tablist]{flex-direction:row;overflow-x:auto;padding-bottom:.4rem}
+  [role=tab]{white-space:nowrap}
+  .caja{padding-right:1.8rem}
+  #inicio .gigante{opacity:.6}
+}
+</style>
+</head>
+<body>
+<div id="progreso"></div>
+<nav id="nav" aria-label="Secciones">
+  <a href="#inicio" aria-label="Portada"></a>
+  <a href="#cambios" aria-label="Transformaciones"></a>
+  <a href="#video" aria-label="Video"></a>
+  <a href="#debate" aria-label="Debate sobre la IA"></a>
+  <a href="#fuentes" aria-label="Fuentes"></a>
+</nav>
+<button id="modo" type="button">Pantalla completa</button>
+
+<!-- 1. PORTADA -->
+<section id="inicio" class="oscura">
+  <div class="gigante" aria-hidden="true">2030</div>
+  <div class="caja">
+    <h1>El derecho en la década de 2030</h1>
+    <p>La adopción masiva de la inteligencia artificial, la exigencia de sostenibilidad ambiental y una profunda redefinición del rol del abogado marcan la práctica legal de la próxima década.</p>
+    <div class="acciones">
+      <a class="btn" href="#cambios">Ver las transformaciones</a>
+      <a class="btn sec" href="#video">Ir al video</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2. TRANSFORMACIONES (pestañas) -->
+<section id="cambios">
+  <div class="caja">
+    <h2>Principales transformaciones del derecho</h2>
+    <p class="intro">Cuatro cambios que definen la práctica jurídica en los 2030. Selecciona cada uno para ver el detalle.</p>
+    <div class="tabs">
+      <div role="tablist" aria-label="Transformaciones">
+        <button role="tab" id="t1" aria-controls="p1" aria-selected="true" style="--c:#2f5bff">Inteligencia artificial y automatización</button>
+        <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1" style="--c:#8a5cf5">Nuevas habilidades indispensables</button>
+        <button role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1" style="--c:#2f9e6e">Derecho ambiental y sostenibilidad</button>
+        <button role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1" style="--c:#d98a1f">Crisis y adaptación en la educación legal</button>
+      </div>
+      <div class="panel">
+        <div role="tabpanel" id="p1" aria-labelledby="t1" style="--c:#2f5bff">
+          <h3>Tecnología que automatiza lo repetitivo</h3>
+          <ul>
+            <li>Las herramientas tecnológicas, los contratos inteligentes y el blockchain automatizan tareas repetitivas como la revisión de documentos.</li>
+            <li>Hay un intenso debate sobre el alcance de la IA: algunas voces plantean una automatización radical, pero el consenso apunta a que la tecnología complementa al profesional en lugar de borrarlo.</li>
+          </ul>
+          <div class="chips"><span class="chip">Contratos inteligentes</span><span class="chip">Blockchain</span><span class="chip">Revisión de documentos</span></div>
+        </div>
+        <div role="tabpanel" id="p2" aria-labelledby="t2" style="--c:#8a5cf5" hidden>
+          <h3>Del intérprete de normas al estratega</h3>
+          <ul>
+            <li>El abogado del futuro no es solo un intérprete de normas: es un estratega con pensamiento crítico, ética sólida y capacidad de decidir con base en datos tecnológicos.</li>
+            <li>Debe saber resolver conflictos complejos tanto en el mundo físico como en entornos digitales.</li>
+          </ul>
+          <div class="chips"><span class="chip">Pensamiento crítico</span><span class="chip">Ética</span><span class="chip">Decisiones con datos</span><span class="chip">Entornos digitales</span></div>
+        </div>
+        <div role="tabpanel" id="p3" aria-labelledby="t3" style="--c:#2f9e6e" hidden>
+          <h3>El clima como eje de la legislación</h3>
+          <ul>
+            <li>La crisis climática y la gobernanza de los ecosistemas sitúan al derecho ambiental como un eje central de la legislación y los negocios.</li>
+            <li>La práctica jurídica incorpora de lleno los marcos de la Agenda 2030 de la ONU y los Objetivos de Desarrollo Sostenible (ODS).</li>
+          </ul>
+          <div class="chips"><span class="chip">Agenda 2030</span><span class="chip">ODS</span><span class="chip">Gobernanza de ecosistemas</span></div>
+          <a class="fuente" href="https://dominicanrepublic.un.org/es/129337-agenda-2030-y-los-derechos-humanos" target="_blank" rel="noopener">Agenda 2030 y derechos humanos (ONU)</a>
+        </div>
+        <div role="tabpanel" id="p4" aria-labelledby="t4" style="--c:#d98a1f" hidden>
+          <h3>Facultades de derecho bajo presión</h3>
+          <ul>
+            <li>Las facultades enfrentan presiones financieras y estructurales para modernizar sus planes de estudio frente a la irrupción digital.</li>
+            <li>Es un fenómeno analizado en reportes como «The 2030 Law School Crisis», publicado en LinkedIn.</li>
+          </ul>
+          <div class="chips"><span class="chip">Planes de estudio</span><span class="chip">Presión financiera</span><span class="chip">Irrupción digital</span></div>
+          <a class="fuente" href="https://www.linkedin.com/pulse/2030-law-school-crisis-steve-schwartz-iyxhe" target="_blank" rel="noopener">Leer el reporte en LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. VIDEO DE YOUTUBE -->
+<section id="video" class="oscura">
+  <div class="caja">
+    <h2>Video de la exposición</h2>
+    <p class="intro">Reproduce aquí tu video de 8 minutos. Sigue la guía para subirlo a YouTube y pegar el enlace.</p>
+    <div class="video-grid">
+      <div class="marco" id="marco">
+        <div class="vacio">
+          <strong>Aquí aparecerá tu video</strong>
+          Pega el enlace de YouTube en el recuadro de la derecha.
+        </div>
+      </div>
+      <aside class="guia">
+        <h3>Cómo subir tu video</h3>
+        <ol>
+          <li>Entra a <b>studio.youtube.com</b> con tu cuenta de Google.</li>
+          <li>Pulsa <b>Crear</b> y luego <b>Subir videos</b>; elige tu archivo de 8 minutos.</li>
+          <li>En <b>Visibilidad</b> selecciona <b>No listado</b> (o <b>Público</b>).</li>
+          <li>Cuando termine, copia el enlace del video.</li>
+          <li>Pégalo abajo, o escribe su ID en la constante <code>VIDEO_ID</code> del código para que quede fijo.</li>
+        </ol>
+        <label for="enlace">Enlace de YouTube</label>
+        <div class="fila">
+          <input id="enlace" type="url" placeholder="https://youtu.be/XXXXXXXXXXX">
+          <button class="btn" id="cargar" type="button">Cargar</button>
+        </div>
+        <p id="msg" role="status"></p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 4. DEBATE -->
+<section id="debate">
+  <div class="caja">
+    <h2>¿Reemplazará la IA a los abogados?</h2>
+    <p class="intro">Dos posturas en discusión. Alterna entre ellas para ver dónde está el consenso.</p>
+    <div class="interruptor" role="group" aria-label="Postura">
+      <button type="button" data-p="rad" aria-pressed="true">Automatización radical</button>
+      <button type="button" data-p="con" aria-pressed="false">Complemento del profesional</button>
+    </div>
+    <div class="postura" id="rad">
+      <span class="etiqueta rad">Postura minoritaria</span>
+      <h3>Una profesión casi totalmente automatizada</h3>
+      <p>Algunas voces, como las que se discuten en la comunidad r/Lawyertalk de Reddit, plantean que la IA podría asumir buena parte del trabajo jurídico.</p>
+      <div class="medidor" aria-hidden="true"><i data-w="25"></i></div>
+    </div>
+    <div class="postura" id="con" hidden>
+      <span class="etiqueta con">Consenso actual</span>
+      <h3>La tecnología potencia al profesional</h3>
+      <p>La IA se encarga de lo repetitivo y el abogado se concentra en la estrategia, la ética y la toma de decisiones.</p>
+      <div class="medidor" aria-hidden="true"><i data-w="80"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. FUENTES -->
+<section id="fuentes" class="oscura">
+  <div class="caja">
+    <h2>Fuentes consultadas</h2>
+    <p class="intro">Para ampliar la información, abre cualquiera de estos enlaces.</p>
+    <ul class="fuentes">
+      <li><a href="https://www.uexternado.edu.co/departamento-de-derecho-de-los-negocios/determinando-el-futuro-del-derecho-tendencias-en-la-innovacion-legal/" target="_blank" rel="noopener"><b>Tendencias en la innovación legal</b><span>Universidad Externado de Colombia</span></a></li>
+      <li><a href="https://www.reddit.com/r/Lawyertalk/comments/1kra6io/according_to_bill_gates_lawyers_will_be_fully/" target="_blank" rel="noopener"><b>Debate sobre automatización</b><span>r/Lawyertalk, Reddit</span></a></li>
+      <li><a href="https://www.facebook.com/UnifranzCbbaOficial/posts/c%C3%B3mo-est%C3%A1-cambiando-el-derecho-y-qu%C3%A9-habilidades-necesitar%C3%A1n-los-abogados-en-203/1911344650153944/" target="_blank" rel="noopener"><b>Habilidades de los abogados en 2030</b><span>Unifranz Cochabamba, Facebook</span></a></li>
+      <li><a href="https://www.instagram.com/reel/DePOXXdEqt-/" target="_blank" rel="noopener"><b>Cómo cambia el derecho</b><span>Instagram</span></a></li>
+      <li><a href="https://dominicanrepublic.un.org/es/129337-agenda-2030-y-los-derechos-humanos" target="_blank" rel="noopener"><b>Agenda 2030 y derechos humanos</b><span>Naciones Unidas</span></a></li>
+      <li><a href="https://www.linkedin.com/pulse/2030-law-school-crisis-steve-schwartz-iyxhe" target="_blank" rel="noopener"><b>The 2030 Law School Crisis</b><span>LinkedIn</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<script>
+/* ====== CONFIGURACIÓN DEL VIDEO ======
+   Después de subir tu video a YouTube, pega aquí su ID.
+   Ejemplo: en https://youtu.be/dQw4w9WgXcQ el ID es dQw4w9WgXcQ  */
+const VIDEO_ID = "";
+
+const marco = document.getElementById('marco');
+const enlace = document.getElementById('enlace');
+const msg = document.getElementById('msg');
+
+function extraerID(texto){
+  texto = texto.trim();
+  if (/^[\w-]{11}$/.test(texto)) return texto;
+  const m = texto.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/);
+  return m ? m[1] : null;
+}
+function mostrarVideo(id){
+  const web = location.protocol.startsWith('http');
+  const origen = web ? '&origin=' + encodeURIComponent(location.origin) : '';
+  marco.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id +
+    '?rel=0' + origen + '" title="Video de la exposición" referrerpolicy="strict-origin-when-cross-origin" ' +
+    'allow="accelerometer; autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+  msg.style.color = '#ffd27a';
+  msg.innerHTML = web ? '' :
+    'Estás abriendo el archivo desde tu computador y YouTube bloquea eso (error 153). ' +
+    'Publica la página en GitHub Pages o ábrela desde un servidor local. ' +
+    '<a href="https://youtu.be/' + id + '" target="_blank" rel="noopener" style="color:#fff">Ver en YouTube</a>';
+}
+document.getElementById('cargar').addEventListener('click', () => {
+  const id = extraerID(enlace.value);
+  if (id){ msg.textContent = ''; mostrarVideo(id); }
+  else { msg.textContent = 'El enlace no es válido. Copia el enlace completo desde YouTube.'; }
+});
+enlace.addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('cargar').click(); });
+if (VIDEO_ID) mostrarVideo(VIDEO_ID);
+
+/* ====== PESTAÑAS ====== */
+const tabs = [...document.querySelectorAll('[role=tab]')];
+function elegirTab(t){
+  tabs.forEach(x => {
+    const on = x === t;
+    x.setAttribute('aria-selected', on);
+    x.tabIndex = on ? 0 : -1;
+    document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
+  });
+}
+tabs.forEach((t,i) => {
+  t.addEventListener('click', () => elegirTab(t));
+  t.addEventListener('keydown', e => {
+    const k = {ArrowDown:1,ArrowRight:1,ArrowUp:-1,ArrowLeft:-1}[e.key];
+    if (!k) return;
+    e.preventDefault(); e.stopPropagation();
+    const n = tabs[(i + k + tabs.length) % tabs.length];
+    n.focus(); elegirTab(n);
+  });
+});
+
+/* ====== DEBATE ====== */
+const botones = document.querySelectorAll('.interruptor button');
+function medir(p){
+  const i = p.querySelector('i'); i.style.width = '0';
+  requestAnimationFrame(() => requestAnimationFrame(() => i.style.width = i.dataset.w + '%'));
+}
+botones.forEach(b => b.addEventListener('click', () => {
+  botones.forEach(x => {
+    const on = x === b;
+    x.setAttribute('aria-pressed', on);
+    document.getElementById(x.dataset.p).hidden = !on;
+  });
+  medir(document.getElementById(b.dataset.p));
+}));
+medir(document.getElementById('rad'));
+
+/* ====== NAVEGACIÓN, PROGRESO Y TECLADO ====== */
+const secciones = [...document.querySelectorAll('section')];
+const puntos = [...document.querySelectorAll('#nav a')];
+let actual = 0;
+const obs = new IntersectionObserver(es => {
+  es.forEach(e => {
+    if (e.isIntersecting){
+      actual = secciones.indexOf(e.target);
+      puntos.forEach((p,i) => p.classList.toggle('activo', i === actual));
+    }
+  });
+}, {threshold:.55});
+secciones.forEach(s => obs.observe(s));
+
+addEventListener('scroll', () => {
+  const max = document.documentElement.scrollHeight - innerHeight;
+  document.getElementById('progreso').style.width = (scrollY / max * 100) + '%';
+}, {passive:true});
+
+addEventListener('keydown', e => {
+  if (e.target.matches('input,[role=tab]')) return;
+  let d = 0;
+  if (['ArrowDown','ArrowRight','PageDown'].includes(e.key)) d = 1;
+  if (['ArrowUp','ArrowLeft','PageUp'].includes(e.key)) d = -1;
+  if (!d) return;
+  e.preventDefault();
+  const n = Math.min(Math.max(actual + d, 0), secciones.length - 1);
+  secciones[n].scrollIntoView({behavior:'smooth'});
+});
+
+/* ====== PANTALLA COMPLETA ====== */
+const modo = document.getElementById('modo');
+modo.addEventListener('click', () => {
+  if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+  else document.exitFullscreen();
+});
+document.addEventListener('fullscreenchange', () => {
+  modo.textContent = document.fullscreenElement ? 'Salir de pantalla completa' : 'Pantalla completa';
+});
+</script>
+</body>
+</html>
