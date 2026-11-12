@@ -101,11 +101,34 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
 .fuentes b{display:block;color:var(--ink);margin-bottom:.2rem}
 .fuentes span{font-size:.85rem;color:var(--soft)}
 #inicio .univ{font-size:1rem;color:#a9b4c9;border-left:3px solid var(--sage);padding-left:.9rem}
-.logo-badge{display:inline-flex;align-items:center;background:#fff;color:var(--ink);font:600 1.05rem var(--serif);border-radius:10px;padding:.6rem 1rem;min-height:56px;margin-bottom:1.6rem}
-.logo-badge img{height:48px;width:auto;display:block}
+.logo-badge{display:inline-flex;align-items:center;background:#fff;color:var(--ink);font:600 1.05rem var(--serif);border-radius:10px;padding:.7rem 1.2rem;min-height:56px;margin-bottom:1.6rem}
+.logo-badge img{height:72px;width:auto;max-width:100%;display:block}
+@media (max-width:600px){.logo-badge img{height:56px}}
 #inicio .ficha{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;margin:0 0 2rem}
 .ficha dt{font-size:.85rem;color:#a9b4c9}
 .ficha dd{margin:0;font:600 1.25rem var(--serif);color:#fff}
+.blanca{background:var(--white)}
+.pf-grid{display:grid;grid-template-columns:320px 1fr;gap:3.5rem;align-items:start}
+.pf-foto{margin:0;position:sticky;top:5rem;width:320px;aspect-ratio:3/4;border-radius:14px;box-shadow:14px 14px 0 var(--sage);background:var(--ink2);overflow:hidden;display:grid;place-items:center}
+.pf-foto img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.pf-foto span{font:600 4rem var(--serif);color:#a9b4c9}
+.pf-materia{font:600 1.3rem var(--serif);color:var(--verde,#2f9e6e);margin:0 0 .3rem}
+.pf-filtros{display:inline-flex;flex-wrap:wrap;background:var(--paper);border:1.5px solid var(--line);border-radius:999px;padding:5px;margin-bottom:1.8rem}
+.pf-filtros button{font:600 .95rem var(--sans);padding:.6rem 1.2rem;border:0;border-radius:999px;background:transparent;color:var(--soft);cursor:pointer}
+.pf-filtros button[aria-pressed=true]{background:var(--ink);color:#fff}
+.pf-grupo{margin-bottom:1.8rem}
+.pf-grupo[hidden]{display:none}
+.pf-grupo h3{font:600 1.5rem/1.2 var(--serif);margin:0 0 .9rem}
+.pf-lista{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.9rem}
+.pf-lista li{--c:var(--cobalt);background:var(--paper);border:1.5px solid var(--line);border-left:6px solid var(--c);border-radius:10px;padding:1rem 1.2rem;transition:transform .2s,box-shadow .2s}
+.pf-lista li:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(15,26,46,.12)}
+.pf-grupo.exp li{--c:#2f9e6e}
+.pf-lista b{display:block;font:600 1.08rem/1.3 var(--serif);margin-bottom:.25rem}
+.pf-lista span{color:var(--soft);font-size:.92rem}
+@media (max-width:860px){
+  .pf-grid{grid-template-columns:1fr;gap:2.2rem}
+  .pf-foto{position:static;width:min(280px,100%)}
+}
 #msg{margin:.8rem 0 0;font-size:.9rem;color:#ffd27a}
 #msg a{color:#fff}
 .tarjetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-bottom:2.5rem}
@@ -133,6 +156,7 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
   <a href="#cambios" aria-label="Transformaciones"></a>
   <a href="#video" aria-label="Entrevista"></a>
   <a href="#debate" aria-label="Debate sobre la IA"></a>
+  <a href="#profesor" aria-label="El profesor"></a>
   <a href="#semestre" aria-label="Primer semestre y autores"></a>
   <a href="#fuentes" aria-label="Fuentes"></a>
 </nav>
@@ -151,11 +175,12 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
     <p class="univ">Exposición de estudiantes de primer semestre de Derecho de la Universidad Sergio Arboleda.</p>
     <dl class="ficha">
       <div><dt>Materia</dt><dd>Introducción a la filosofía</dd></div>
-      <div><dt>Profesor</dt><dd>José Rafael Bulla Pinto</dd></div>
+      <div><dt>Profesor</dt><dd><a href="#profesor" style="color:#fff;text-decoration-color:var(--sage);text-underline-offset:4px">José Rafael Bulla Pinto</a></dd></div>
     </dl>
     <div class="acciones">
       <a class="btn" href="#cambios">Ver las transformaciones</a>
       <a class="btn sec" href="#video">Ver la entrevista</a>
+      <a class="btn sec" href="#profesor">Conocer al profesor</a>
     </div>
   </div>
 </section>
@@ -246,7 +271,48 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
   </div>
 </section>
 
-<!-- 5. PRIMER SEMESTRE Y AUTORES -->
+<!-- 5. EL PROFESOR -->
+<section id="profesor" class="blanca">
+  <div class="caja">
+    <div class="pf-grid">
+      <figure class="pf-foto">
+        <img src="https://img.lightshot.app/3LqjbgmgS_S8vq9ou8H20w.png" alt="Fotografía del profesor José Rafael Bulla Pinto"
+             onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'JB'}))">
+      </figure>
+      <div class="pf-texto">
+        <p class="pf-materia">Introducción a la filosofía</p>
+        <h2>José Rafael Bulla Pinto</h2>
+        <p class="intro">Filósofo y abogado, docente de la Universidad Sergio Arboleda en las áreas de filosofía, lógica, teoría del conocimiento y ética.</p>
+        <div class="pf-filtros" role="group" aria-label="Filtrar información">
+          <button type="button" data-f="todo" aria-pressed="true">Todo</button>
+          <button type="button" data-f="form" aria-pressed="false">Formación</button>
+          <button type="button" data-f="exp" aria-pressed="false">Experiencia docente</button>
+        </div>
+        <div class="pf-grupo" id="pf-form">
+          <h3>Formación académica</h3>
+          <ul class="pf-lista">
+            <li><b>Candidato a Doctor en Filosofía</b><span>Universidad de Navarra, España</span></li>
+            <li><b>Magíster en Filosofía Latinoamericana</b><span>Universidad Santo Tomás</span></li>
+            <li><b>Especialización en Docencia e Investigación Universitaria</b><span>Universidad Militar</span></li>
+            <li><b>Licenciado en Filosofía</b><span>Universidad San Buenaventura</span></li>
+            <li><b>Abogado</b><span>Universidad Militar Nueva Granada</span></li>
+          </ul>
+        </div>
+        <div class="pf-grupo exp" id="pf-exp">
+          <h3>Experiencia docente</h3>
+          <ul class="pf-lista">
+            <li><b>Docente de la Maestría en Investigación y Docencia Universitaria</b><span>Universidad Sergio Arboleda</span></li>
+            <li><b>Docente de Filosofía, Lógica y Teoría del Conocimiento</b><span>Escuela de Filosofía y Humanidades, Universidad Sergio Arboleda</span></li>
+            <li><b>Docente de Lógica, Teoría del Conocimiento, Ética e Historia de la Filosofía</b><span>Escuela Mayor de Derecho, Universidad Sergio Arboleda</span></li>
+            <li><b>Docente de Lógica, Teoría del Conocimiento científico y Pensamiento Social contemporáneo</b><span>Universidad de la Sabana</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. PRIMER SEMESTRE Y AUTORES -->
 <section id="semestre" class="oscura">
   <div class="caja">
     <h2>Para quienes inician Derecho</h2>
@@ -263,7 +329,7 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
       <li><span class="ini">JJ</span><b>Juan Felipe Jurado</b></li>
       <li><span class="ini">IM</span><b>Isabella Mendoza</b></li>
     </ul>
-    <p class="intro" style="margin:1.8rem 0 0">Exposición para la materia Introducción a la filosofía, a cargo del profesor José Rafael Bulla Pinto.</p>
+    <p class="intro" style="margin:1.8rem 0 0">Exposición para la materia Introducción a la filosofía, a cargo del profesor <a href="#profesor" style="color:#fff">José Rafael Bulla Pinto</a>.</p>
   </div>
 </section>
 
@@ -334,6 +400,14 @@ botones.forEach(b => b.addEventListener('click', () => {
   medir(document.getElementById(b.dataset.p));
 }));
 medir(document.getElementById('rad'));
+
+/* ====== PROFESOR: FILTROS ====== */
+const pfBotones = document.querySelectorAll('.pf-filtros button');
+pfBotones.forEach(b => b.addEventListener('click', () => {
+  pfBotones.forEach(x => x.setAttribute('aria-pressed', x === b));
+  document.getElementById('pf-form').hidden = b.dataset.f === 'exp';
+  document.getElementById('pf-exp').hidden = b.dataset.f === 'form';
+}));
 
 /* ====== NAVEGACIÓN, PROGRESO Y TECLADO ====== */
 const secciones = [...document.querySelectorAll('section')];
