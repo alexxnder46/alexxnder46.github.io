@@ -102,8 +102,8 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
 .fuentes span{font-size:.85rem;color:var(--soft)}
 #inicio .univ{font-size:1rem;color:#a9b4c9;border-left:3px solid var(--sage);padding-left:.9rem}
 .logo-badge{display:inline-flex;align-items:center;background:#fff;color:var(--ink);font:600 1.05rem var(--serif);border-radius:10px;padding:.7rem 1.2rem;min-height:56px;margin-bottom:1.6rem}
-.logo-badge img{height:72px;width:auto;max-width:100%;display:block}
-@media (max-width:600px){.logo-badge img{height:56px}}
+.logo-badge img{height:88px;width:auto;max-width:100%;display:block}
+@media (max-width:600px){.logo-badge img{height:64px}}
 #inicio .ficha{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;margin:0 0 2rem}
 .ficha dt{font-size:.85rem;color:#a9b4c9}
 .ficha dd{margin:0;font:600 1.25rem var(--serif);color:#fff}
@@ -129,6 +129,9 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
   .pf-grid{grid-template-columns:1fr;gap:2.2rem}
   .pf-foto{position:static;width:min(280px,100%)}
 }
+.c-violeta li{--c:#8a5cf5}
+.c-verde li{--c:#2f9e6e}
+.c-ambar li{--c:#d98a1f}
 #msg{margin:.8rem 0 0;font-size:.9rem;color:#ffd27a}
 #msg a{color:#fff}
 .tarjetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-bottom:2.5rem}
@@ -155,6 +158,7 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
   <a href="#inicio" aria-label="Portada"></a>
   <a href="#cambios" aria-label="Transformaciones"></a>
   <a href="#video" aria-label="Entrevista"></a>
+  <a href="#invitado" aria-label="Biografía de Germán Darío Flórez Acero"></a>
   <a href="#debate" aria-label="Debate sobre la IA"></a>
   <a href="#profesor" aria-label="El profesor"></a>
   <a href="#semestre" aria-label="Primer semestre y autores"></a>
@@ -244,6 +248,79 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
     <p class="intro">Mira la entrevista de la exposición sobre el futuro del derecho.</p>
     <div class="marco" id="marco"></div>
     <p id="msg" role="status"></p>
+  </div>
+</section>
+
+<!-- 3b. BIOGRAFÍA (después de la entrevista) -->
+<section id="invitado" class="blanca">
+  <div class="caja">
+    <div class="pf-grid">
+      <figure class="pf-foto">
+        <img src="https://www.ambitojuridico.com/sites/default/files/pictures/2020-11/German-Dario-Florez-Acero.jpg" alt="Fotografía de Germán Darío Flórez Acero"
+             onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'GF'}))">
+      </figure>
+      <div class="pf-texto">
+        <p class="pf-materia">Abogado con más de 21 años de experiencia</p>
+        <h2>Germán Darío Flórez Acero</h2>
+        <p class="intro">Especializado en arbitraje comercial nacional e internacional, derecho deportivo, propiedad intelectual, derecho digital y legal tech.</p>
+        <div class="pf-filtros iv-filtros" role="group" aria-label="Secciones de la biografía">
+          <button type="button" data-g="iv-exp" aria-pressed="true">Experticia</button>
+          <button type="button" data-g="iv-form" aria-pressed="false">Formación</button>
+          <button type="button" data-g="iv-pub" aria-pressed="false">Publicaciones</button>
+          <button type="button" data-g="iv-rec" aria-pressed="false">Reconocimientos</button>
+        </div>
+
+        <div class="pf-grupo iv-grupo" id="iv-exp">
+          <h3>Áreas de práctica</h3>
+          <div class="chips" style="margin:0 0 1.6rem">
+            <span class="chip">Arbitraje comercial nacional e internacional</span><span class="chip">Derecho deportivo</span><span class="chip">Propiedad intelectual</span><span class="chip">Derecho privado</span><span class="chip">Derecho digital</span><span class="chip">Legal tech</span><span class="chip">Derecho de telecomunicaciones</span><span class="chip">Derecho de consumo</span>
+          </div>
+          <h3>Cargos y roles</h3>
+          <ul class="pf-lista">
+            <li><b>Árbitro</b><span>Centro de Arbitraje y Conciliación de la Cámara de Comercio de Bogotá</span></li>
+            <li><b>Árbitro</b><span>Institución de Resolución de Conflictos en Blockchain y Tecnología de Centroamérica</span></li>
+            <li><b>Árbitro</b><span>Centro de Arbitraje y Conciliación de la Cámara de Comercio de Cali</span></li>
+            <li><b>Árbitro</b><span>Colegio de Abogados de Lima</span></li>
+            <li><b>Director de la maestría en Innovación en Derecho Digital y Legal Tech</b><span>Universidad Sergio Arboleda</span></li>
+            <li><b>Presidente de la Asociación Colombiana de Legal Tech (ALT+CO)</b><span>Desde 2020</span></li>
+            <li><b>Consultor</b><span>En diversas áreas del derecho</span></li>
+          </ul>
+        </div>
+
+        <div class="pf-grupo iv-grupo c-violeta" id="iv-form" hidden>
+          <h3>Formación académica</h3>
+          <ul class="pf-lista">
+            <li><b>Maestría en Propiedad Intelectual</b><span>Queen Mary University of London</span></li>
+            <li><b>Estudios en Derecho de las Telecomunicaciones, Protección de Datos, Derecho Informático, Comercio Electrónico y Derecho del Ciberespacio</b><span>Diversas universidades europeas</span></li>
+            <li><b>Aspirante a doctor</b><span>Universidad Sergio Arboleda</span></li>
+            <li><b>Becario</b><span>Ministerio de Ciencia, Tecnología e Innovación de Colombia</span></li>
+          </ul>
+        </div>
+
+        <div class="pf-grupo iv-grupo c-verde" id="iv-pub" hidden>
+          <h3>Membresías y publicaciones</h3>
+          <p style="margin:0 0 1rem;color:var(--soft)">Es miembro activo de diversas organizaciones y ha sido ponente en congresos internacionales. Ha publicado libros y artículos académicos sobre propiedad intelectual, legal tech y derecho digital.</p>
+          <ul class="pf-lista">
+            <li><b>«Sujetos y derechos en las redes sociales»</b><span>Publicación</span></li>
+            <li><b>«Propiedad Intelectual: Derechos de Autor y Derecho Marcario en tiempos de las industrias creativas»</b><span>Publicación</span></li>
+            <li><b>«Arbitraje y uso de inteligencia artificial»</b><span>Artículo en la revista Vniversitas, 2025</span></li>
+            <li><b>«Arbitraje y nombres de dominio»</b><span>Capítulo, Universidad Nacional, 2025</span></li>
+          </ul>
+        </div>
+
+        <div class="pf-grupo iv-grupo c-ambar" id="iv-rec" hidden>
+          <h3>Reconocimientos y rankings</h3>
+          <ul class="pf-lista">
+            <li><b>Premio Alas de la Excelencia</b><span>Grupo ISIMO, México, 2024</span></li>
+            <li><b>Mejor profesor de pregrado</b><span>Escuela Mayor de Derecho, Universidad Sergio Arboleda, 2024</span></li>
+            <li><b>Premio al Mejor Investigador en Derecho</b><span>Universidad Sergio Arboleda, 2023</span></li>
+            <li><b>Ranking de mejores firmas de abogados</b><span>Leaders League, 2021</span></li>
+            <li><b>Premio «Mejor artículo de investigación»</b><span>Universidad Católica de Colombia, 2019</span></li>
+            <li><b>Primeros lugares en competencias internacionales</b><span>Arbitraje comercial y de inversión</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -407,6 +484,13 @@ pfBotones.forEach(b => b.addEventListener('click', () => {
   pfBotones.forEach(x => x.setAttribute('aria-pressed', x === b));
   document.getElementById('pf-form').hidden = b.dataset.f === 'exp';
   document.getElementById('pf-exp').hidden = b.dataset.f === 'form';
+}));
+
+/* ====== BIOGRAFÍA DEL ENTREVISTADO: SECCIONES ====== */
+const ivBotones = document.querySelectorAll('.iv-filtros button');
+ivBotones.forEach(b => b.addEventListener('click', () => {
+  ivBotones.forEach(x => x.setAttribute('aria-pressed', x === b));
+  document.querySelectorAll('.iv-grupo').forEach(g => g.hidden = g.id !== b.dataset.g);
 }));
 
 /* ====== NAVEGACIÓN, PROGRESO Y TECLADO ====== */
