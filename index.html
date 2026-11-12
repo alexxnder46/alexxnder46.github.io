@@ -96,10 +96,26 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
 
 /* Fuentes */
 .fuentes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:0;padding:0;list-style:none}
-.fuentes a{display:block;height:100%;padding:1.1rem 1.2rem;border:1.5px solid #2c3d5e;border-radius:10px;text-decoration:none;background:var(--ink2);transition:border-color .2s,transform .2s}
-.fuentes a:hover{border-color:var(--sage);transform:translateY(-3px)}
-.fuentes b{display:block;color:#fff;margin-bottom:.2rem}
-.fuentes span{font-size:.85rem;color:#a9b4c9}
+.fuentes a{display:block;height:100%;padding:1.1rem 1.2rem;border:1.5px solid var(--line);border-radius:10px;text-decoration:none;background:var(--white);transition:border-color .2s,transform .2s}
+.fuentes a:hover{border-color:var(--cobalt);transform:translateY(-3px)}
+.fuentes b{display:block;color:var(--ink);margin-bottom:.2rem}
+.fuentes span{font-size:.85rem;color:var(--soft)}
+#inicio .univ{font-size:1rem;color:#a9b4c9;border-left:3px solid var(--sage);padding-left:.9rem}
+.logo-badge{display:inline-flex;align-items:center;background:#fff;color:var(--ink);font:600 1.05rem var(--serif);border-radius:10px;padding:.6rem 1rem;min-height:56px;margin-bottom:1.6rem}
+.logo-badge img{height:48px;width:auto;display:block}
+#inicio .ficha{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;margin:0 0 2rem}
+.ficha dt{font-size:.85rem;color:#a9b4c9}
+.ficha dd{margin:0;font:600 1.25rem var(--serif);color:#fff}
+#msg{margin:.8rem 0 0;font-size:.9rem;color:#ffd27a}
+#msg a{color:#fff}
+.tarjetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-bottom:2.5rem}
+.tarjetas article{background:var(--ink2);border:1.5px solid #2c3d5e;border-radius:12px;padding:1.4rem}
+.tarjetas h3{font:600 1.25rem/1.2 var(--serif);margin:0 0 .5rem;color:#fff}
+.tarjetas p{margin:0;color:#c6cfdf;font-size:.95rem}
+.sub{font:600 1.5rem var(--serif);margin:0 0 1rem}
+.autores{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.autores li{display:flex;align-items:center;gap:.9rem;padding:1rem;border-radius:12px;background:var(--white);color:var(--ink)}
+.ini{width:46px;height:46px;border-radius:50%;background:var(--cobalt);color:#fff;display:grid;place-items:center;font:600 1rem var(--sans);flex:none}
 
 @media (max-width:860px){
   .tabs,.video-grid{grid-template-columns:1fr}
@@ -115,8 +131,9 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
 <nav id="nav" aria-label="Secciones">
   <a href="#inicio" aria-label="Portada"></a>
   <a href="#cambios" aria-label="Transformaciones"></a>
-  <a href="#video" aria-label="Video"></a>
+  <a href="#video" aria-label="Entrevista"></a>
   <a href="#debate" aria-label="Debate sobre la IA"></a>
+  <a href="#semestre" aria-label="Primer semestre y autores"></a>
   <a href="#fuentes" aria-label="Fuentes"></a>
 </nav>
 <button id="modo" type="button">Pantalla completa</button>
@@ -125,11 +142,20 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
 <section id="inicio" class="oscura">
   <div class="gigante" aria-hidden="true">2030</div>
   <div class="caja">
+    <div class="logo-badge">
+      <img src="logo-usergioarboleda.png" alt="Universidad Sergio Arboleda"
+           onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'Universidad Sergio Arboleda'}))">
+    </div>
     <h1>El derecho en la década de 2030</h1>
     <p>La adopción masiva de la inteligencia artificial, la exigencia de sostenibilidad ambiental y una profunda redefinición del rol del abogado marcan la práctica legal de la próxima década.</p>
+    <p class="univ">Exposición de estudiantes de primer semestre de Derecho de la Universidad Sergio Arboleda.</p>
+    <dl class="ficha">
+      <div><dt>Materia</dt><dd>Introducción a la filosofía</dd></div>
+      <div><dt>Profesor</dt><dd>José Rafael Bulla Pinto</dd></div>
+    </dl>
     <div class="acciones">
       <a class="btn" href="#cambios">Ver las transformaciones</a>
-      <a class="btn sec" href="#video">Ir al video</a>
+      <a class="btn sec" href="#video">Ver la entrevista</a>
     </div>
   </div>
 </section>
@@ -186,35 +212,13 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
   </div>
 </section>
 
-<!-- 3. VIDEO DE YOUTUBE -->
+<!-- 3. ENTREVISTA -->
 <section id="video" class="oscura">
   <div class="caja">
-    <h2>Video de la exposición</h2>
-    <p class="intro">Reproduce aquí tu video de 8 minutos. Sigue la guía para subirlo a YouTube y pegar el enlace.</p>
-    <div class="video-grid">
-      <div class="marco" id="marco">
-        <div class="vacio">
-          <strong>Aquí aparecerá tu video</strong>
-          Pega el enlace de YouTube en el recuadro de la derecha.
-        </div>
-      </div>
-      <aside class="guia">
-        <h3>Cómo subir tu video</h3>
-        <ol>
-          <li>Entra a <b>studio.youtube.com</b> con tu cuenta de Google.</li>
-          <li>Pulsa <b>Crear</b> y luego <b>Subir videos</b>; elige tu archivo de 8 minutos.</li>
-          <li>En <b>Visibilidad</b> selecciona <b>No listado</b> (o <b>Público</b>).</li>
-          <li>Cuando termine, copia el enlace del video.</li>
-          <li>Pégalo abajo, o escribe su ID en la constante <code>VIDEO_ID</code> del código para que quede fijo.</li>
-        </ol>
-        <label for="enlace">Enlace de YouTube</label>
-        <div class="fila">
-          <input id="enlace" type="url" placeholder="https://youtu.be/XXXXXXXXXXX">
-          <button class="btn" id="cargar" type="button">Cargar</button>
-        </div>
-        <p id="msg" role="status"></p>
-      </aside>
-    </div>
+    <h2>Entrevista</h2>
+    <p class="intro">Mira la entrevista de la exposición sobre el futuro del derecho.</p>
+    <div class="marco" id="marco"></div>
+    <p id="msg" role="status"></p>
   </div>
 </section>
 
@@ -242,8 +246,29 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
   </div>
 </section>
 
-<!-- 5. FUENTES -->
-<section id="fuentes" class="oscura">
+<!-- 5. PRIMER SEMESTRE Y AUTORES -->
+<section id="semestre" class="oscura">
+  <div class="caja">
+    <h2>Para quienes inician Derecho</h2>
+    <p class="intro">Esta exposición está dirigida a los estudiantes de primer semestre de Derecho de la Universidad Sergio Arboleda: la generación que ejercerá la profesión en la década de 2030.</p>
+    <div class="tarjetas">
+      <article><h3>Aprender con la tecnología</h3><p>La inteligencia artificial y los contratos inteligentes ya hacen parte de la práctica jurídica. Entenderlos desde el primer semestre es una ventaja.</p></article>
+      <article><h3>Formar criterio y ética</h3><p>Lo que la tecnología no reemplaza es el pensamiento crítico y la ética del abogado.</p></article>
+      <article><h3>Pensar en sostenibilidad</h3><p>La Agenda 2030 y el derecho ambiental serán parte del trabajo cotidiano de la profesión.</p></article>
+    </div>
+    <h3 class="sub">Autores de la exposición</h3>
+    <ul class="autores">
+      <li><span class="ini">JA</span><b>Jhonatan Aranguren</b></li>
+      <li><span class="ini">MD</span><b>Maria Fernanda Devia</b></li>
+      <li><span class="ini">JJ</span><b>Juan Felipe Jurado</b></li>
+      <li><span class="ini">IM</span><b>Isabella Mendoza</b></li>
+    </ul>
+    <p class="intro" style="margin:1.8rem 0 0">Exposición para la materia Introducción a la filosofía, a cargo del profesor José Rafael Bulla Pinto.</p>
+  </div>
+</section>
+
+<!-- 6. FUENTES -->
+<section id="fuentes">
   <div class="caja">
     <h2>Fuentes consultadas</h2>
     <p class="intro">Para ampliar la información, abre cualquiera de estos enlaces.</p>
@@ -259,40 +284,19 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
 </section>
 
 <script>
-/* ====== CONFIGURACIÓN DEL VIDEO ======
-   Después de subir tu video a YouTube, pega aquí su ID.
-   Ejemplo: en https://youtu.be/dQw4w9WgXcQ el ID es dQw4w9WgXcQ  */
-const VIDEO_ID = "";
-
+/* ====== VIDEO DE LA ENTREVISTA ====== */
+const VIDEO_ID = "6dAcWdtBdYw";
 const marco = document.getElementById('marco');
-const enlace = document.getElementById('enlace');
 const msg = document.getElementById('msg');
-
-function extraerID(texto){
-  texto = texto.trim();
-  if (/^[\w-]{11}$/.test(texto)) return texto;
-  const m = texto.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/);
-  return m ? m[1] : null;
+const web = location.protocol.startsWith('http');
+const origen = web ? '&origin=' + encodeURIComponent(location.origin) : '';
+marco.innerHTML = '<iframe src="https://www.youtube.com/embed/' + VIDEO_ID + '?rel=0' + origen +
+  '" title="Entrevista" referrerpolicy="strict-origin-when-cross-origin" ' +
+  'allow="accelerometer; autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+if (!web) {
+  msg.innerHTML = 'Si ves el error 153, abre la página desde GitHub Pages (no desde el archivo). ' +
+    '<a href="https://youtu.be/' + VIDEO_ID + '" target="_blank" rel="noopener">Ver en YouTube</a>';
 }
-function mostrarVideo(id){
-  const web = location.protocol.startsWith('http');
-  const origen = web ? '&origin=' + encodeURIComponent(location.origin) : '';
-  marco.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id +
-    '?rel=0' + origen + '" title="Video de la exposición" referrerpolicy="strict-origin-when-cross-origin" ' +
-    'allow="accelerometer; autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
-  msg.style.color = '#ffd27a';
-  msg.innerHTML = web ? '' :
-    'Estás abriendo el archivo desde tu computador y YouTube bloquea eso (error 153). ' +
-    'Publica la página en GitHub Pages o ábrela desde un servidor local. ' +
-    '<a href="https://youtu.be/' + id + '" target="_blank" rel="noopener" style="color:#fff">Ver en YouTube</a>';
-}
-document.getElementById('cargar').addEventListener('click', () => {
-  const id = extraerID(enlace.value);
-  if (id){ msg.textContent = ''; mostrarVideo(id); }
-  else { msg.textContent = 'El enlace no es válido. Copia el enlace completo desde YouTube.'; }
-});
-enlace.addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('cargar').click(); });
-if (VIDEO_ID) mostrarVideo(VIDEO_ID);
 
 /* ====== PESTAÑAS ====== */
 const tabs = [...document.querySelectorAll('[role=tab]')];
