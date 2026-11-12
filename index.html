@@ -132,6 +132,34 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
 .c-violeta li{--c:#8a5cf5}
 .c-verde li{--c:#2f9e6e}
 .c-ambar li{--c:#d98a1f}
+#profesor .pf-lista li,#profesor .pf-filtros{background:var(--white)}
+.rol{display:inline-block;font:600 .85rem var(--sans);padding:.3rem .9rem;border-radius:999px;margin-bottom:.8rem;color:#fff}
+.rol.ent{background:var(--cobalt)}.rol.prof{background:#2f9e6e}
+.ruta{list-style:none;margin:0 0 2rem;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem;max-width:820px;counter-reset:r}
+.ruta li{counter-increment:r}
+.ruta a{display:block;height:100%;text-decoration:none;color:#fff;border:1.5px solid #3a4d73;border-radius:10px;padding:.9rem 1rem .9rem 3rem;position:relative;transition:border-color .2s,background .2s}
+.ruta a::before{content:counter(r);position:absolute;left:.9rem;top:.8rem;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--cobalt);display:grid;place-items:center;font:600 .85rem var(--sans)}
+.ruta a:hover{border-color:var(--sage);background:rgba(255,255,255,.05)}
+.ruta b{display:block;font:600 1rem/1.25 var(--serif)}
+.ruta span{font-size:.85rem;color:#a9b4c9}
+.dos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-bottom:2rem;max-width:860px}
+.lectura{background:var(--white);border:1.5px solid var(--line);border-top:6px solid #2f9e6e;border-radius:10px;padding:1.1rem 1.3rem}
+.lectura.riesgo{border-top-color:#d98a1f}
+.lectura b{font:600 1.15rem var(--serif)}.lectura p{margin:.3rem 0 0;color:var(--soft)}
+.nota{max-width:760px;margin:1.5rem 0 0;padding:1rem 1.3rem;background:var(--white);border-left:6px solid var(--cobalt);border-radius:8px;color:var(--soft);font-size:.95rem}
+.puntos{display:grid;gap:.7rem;max-width:860px}
+.puntos details{background:var(--white);border:1.5px solid var(--line);border-radius:10px;padding:.9rem 1.2rem}
+.puntos summary{cursor:pointer;font-weight:600}
+.puntos details[open]{border-color:var(--cobalt)}
+.puntos p{margin:.6rem 0 0;color:var(--soft)}
+#debate .sub{margin-top:2rem}
+.concl{list-style:none;margin:0 0 1.8rem;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;counter-reset:c}
+.concl li{counter-increment:c;background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:1.3rem}
+.concl li::before{content:counter(c);display:grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--cobalt);color:#fff;font-weight:600;margin-bottom:.7rem}
+.concl b{font:600 1.2rem var(--serif)}.concl p{margin:.4rem 0 0;color:var(--soft)}
+.cierre{max-width:62ch;font:400 1.2rem/1.5 var(--serif);margin:0}
+.fgrupo{font:600 1.35rem var(--serif);margin:1.8rem 0 .8rem}
+.fuentes small{display:block;margin-top:.5rem;font-size:.8rem;color:var(--cobalt)}
 #msg{margin:.8rem 0 0;font-size:.9rem;color:#ffd27a}
 #msg a{color:#fff}
 .tarjetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-bottom:2.5rem}
@@ -156,12 +184,14 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
 <div id="progreso"></div>
 <nav id="nav" aria-label="Secciones">
   <a href="#inicio" aria-label="Portada"></a>
-  <a href="#cambios" aria-label="Transformaciones"></a>
+  <a href="#cambios" aria-label="Qué está sucediendo"></a>
+  <a href="#porque" aria-label="Por qué sucede"></a>
+  <a href="#debate" aria-label="Consecuencias jurídicas"></a>
   <a href="#video" aria-label="Entrevista"></a>
-  <a href="#invitado" aria-label="Biografía de Germán Darío Flórez Acero"></a>
-  <a href="#debate" aria-label="Debate sobre la IA"></a>
-  <a href="#profesor" aria-label="El profesor"></a>
-  <a href="#semestre" aria-label="Primer semestre y autores"></a>
+  <a href="#invitado" aria-label="Entrevistado"></a>
+  <a href="#profesor" aria-label="Profesor"></a>
+  <a href="#semestre" aria-label="Estudiantes y autores"></a>
+  <a href="#conclusion" aria-label="Conclusión"></a>
   <a href="#fuentes" aria-label="Fuentes"></a>
 </nav>
 <button id="modo" type="button">Pantalla completa</button>
@@ -181,6 +211,11 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
       <div><dt>Materia</dt><dd>Introducción a la filosofía</dd></div>
       <div><dt>Profesor</dt><dd><a href="#profesor" style="color:#fff;text-decoration-color:var(--sage);text-underline-offset:4px">José Rafael Bulla Pinto</a></dd></div>
     </dl>
+    <ol class="ruta">
+      <li><a href="#cambios"><b>¿Qué está sucediendo?</b><span>Las transformaciones del derecho</span></a></li>
+      <li><a href="#porque"><b>¿Por qué sucede?</b><span>Causas tecnológicas, económicas y jurídicas</span></a></li>
+      <li><a href="#debate"><b>¿Qué consecuencias jurídicas tiene?</b><span>Problemas, responsabilidades y soluciones</span></a></li>
+    </ol>
     <div class="acciones">
       <a class="btn" href="#cambios">Ver las transformaciones</a>
       <a class="btn sec" href="#video">Ver la entrevista</a>
@@ -189,11 +224,10 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
   </div>
 </section>
 
-<!-- 2. TRANSFORMACIONES (pestañas) -->
 <section id="cambios">
   <div class="caja">
     <h2>Principales transformaciones del derecho</h2>
-    <p class="intro">Cuatro cambios que definen la práctica jurídica en los 2030. Selecciona cada uno para ver el detalle.</p>
+    <p class="intro">Primera pregunta: ¿qué está sucediendo? Estos son cuatro cambios que definen la práctica jurídica en los 2030. Selecciona cada uno para ver el detalle.</p>
     <div class="tabs">
       <div role="tablist" aria-label="Transformaciones">
         <button role="tab" id="t1" aria-controls="p1" aria-selected="true" style="--c:#2f5bff">Inteligencia artificial y automatización</button>
@@ -206,7 +240,7 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
           <h3>Tecnología que automatiza lo repetitivo</h3>
           <ul>
             <li>Las herramientas tecnológicas, los contratos inteligentes y el blockchain automatizan tareas repetitivas como la revisión de documentos.</li>
-            <li>Hay un intenso debate sobre el alcance de la IA: algunas voces plantean una automatización radical, pero el consenso apunta a que la tecnología complementa al profesional en lugar de borrarlo.</li>
+            <li>Hay un intenso debate sobre el alcance de la IA: algunas voces plantean una automatización radical, pero buena parte de las fuentes consultadas apunta a que la tecnología complementa al profesional en lugar de reemplazarlo. El alcance real de la automatización sigue en discusión.</li>
           </ul>
           <div class="chips"><span class="chip">Contratos inteligentes</span><span class="chip">Blockchain</span><span class="chip">Revisión de documentos</span></div>
         </div>
@@ -241,17 +275,63 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
   </div>
 </section>
 
-<!-- 3. ENTREVISTA -->
+<section id="porque" class="oscura">
+  <div class="caja">
+    <h2>¿Por qué está sucediendo?</h2>
+    <p class="intro">Segunda pregunta: cuatro causas que se refuerzan entre sí.</p>
+    <div class="tarjetas">
+      <article><h3>Tecnológica</h3><p>La inteligencia artificial, los contratos inteligentes y el blockchain permiten automatizar tareas repetitivas, como la revisión de documentos.</p></article>
+      <article><h3>Económica y laboral</h3><p>La OCDE analiza cómo la IA cambia tareas y empleos: puede crear nuevas tareas y exigir nuevas habilidades, y la evidencia sobre pérdida de empleo todavía es limitada.</p></article>
+      <article><h3>Social y educativa</h3><p>Las facultades de derecho enfrentan presiones para modernizar sus planes de estudio, y UNESCO ha publicado guías para integrar la IA en la educación superior.</p></article>
+      <article><h3>Jurídica y ambiental</h3><p>La Agenda 2030, los ODS y políticas públicas como el CONPES 4144 de Colombia (2025) sobre IA marcan el marco en el que se ejerce la profesión.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="debate">
+  <div class="caja">
+    <h2>¿Qué consecuencias jurídicas tiene?</h2>
+    <p class="intro">Tercera pregunta. Partimos de un problema concreto: ¿la automatización del trabajo jurídico afecta el derecho de acceso a la justicia?</p>
+    <div class="dos">
+      <div class="lectura"><b>Una oportunidad</b><p>Las herramientas pueden reducir tiempos y costos de tareas repetitivas, lo que podría facilitar el acceso a servicios jurídicos.</p></div>
+      <div class="lectura riesgo"><b>Un riesgo</b><p>La brecha digital y la calidad desigual de las herramientas podrían dejar atrás a quienes tienen menos recursos o conectividad.</p></div>
+    </div>
+    <h3 class="sub">Dos posturas sobre el alcance de la IA</h3>
+    <div class="interruptor" role="group" aria-label="Postura">
+      <button type="button" data-p="rad" aria-pressed="true">Automatización radical</button>
+      <button type="button" data-p="con" aria-pressed="false">Complemento del profesional</button>
+    </div>
+    <div class="postura" id="rad">
+      <span class="etiqueta rad">Planteada en debates públicos</span>
+      <h3>Una profesión casi totalmente automatizada</h3>
+      <p>Algunas voces, como las que se discuten en la comunidad r/Lawyertalk de Reddit, plantean que la IA podría asumir buena parte del trabajo jurídico.</p>
+    </div>
+    <div class="postura" id="con" hidden>
+      <span class="etiqueta con">Frecuente en las fuentes consultadas</span>
+      <h3>La tecnología potencia al profesional</h3>
+      <p>La IA se encarga de lo repetitivo y el abogado se concentra en la estrategia, la ética y la toma de decisiones. Es una postura extendida, pero no cerrada: el debate sigue abierto.</p>
+    </div>
+    <p class="nota"><b>Lo que dice la evidencia.</b> El informe Employment Outlook 2023 de la OCDE señalaba que, hasta ese momento, había poca evidencia de efectos negativos significativos de la IA sobre el empleo, aunque advertía que la IA generativa podía ampliar las tareas automatizables. Es evidencia parcial y sigue evolucionando.</p>
+    <h3 class="sub">Cinco puntos para el análisis</h3>
+    <div class="puntos">
+      <details><summary>Responsabilidad por decisiones automatizadas</summary><p>¿Quién responde cuando un sistema automatizado se equivoca: quien lo diseña, quien lo ofrece o quien lo usa? Es una pregunta abierta en muchos ordenamientos. Una lectura frecuente es que quien usa la herramienta no puede escudarse en ella, pero el reparto de responsabilidades sigue en discusión.</p></details>
+      <details><summary>Protección de datos personales</summary><p>Los sistemas de IA suelen procesar información de clientes y de las partes de un proceso. Esto plantea preguntas sobre consentimiento, finalidad del tratamiento y secreto profesional.</p></details>
+      <details><summary>Sesgos algorítmicos</summary><p>Si un sistema aprende de datos históricos, puede reproducir desigualdades que ya existían. En lo jurídico, el riesgo es que esas distorsiones pasen inadvertidas en un resultado que parece neutral.</p></details>
+      <details><summary>Derecho de defensa</summary><p>Una persona debería poder conocer y controvertir las razones de una decisión que la afecta. Los sistemas poco transparentes dificultan esa posibilidad.</p></details>
+      <details><summary>Responsabilidad profesional del abogado</summary><p>El deber de diligencia puede implicar entender las herramientas que se usan y verificar sus resultados antes de presentarlos. El alcance exacto depende de cada normativa profesional.</p></details>
+    </div>
+  </div>
+</section>
+
 <section id="video" class="oscura">
   <div class="caja">
     <h2>Entrevista</h2>
-    <p class="intro">Mira la entrevista de la exposición sobre el futuro del derecho.</p>
+    <p class="intro">Conversación con Germán Darío Flórez Acero, experto en Derecho digital y Legal Tech, sobre el futuro del derecho.</p>
     <div class="marco" id="marco"></div>
     <p id="msg" role="status"></p>
   </div>
 </section>
 
-<!-- 3b. BIOGRAFÍA (después de la entrevista) -->
 <section id="invitado" class="blanca">
   <div class="caja">
     <div class="pf-grid">
@@ -260,7 +340,8 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
              onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'GF'}))">
       </figure>
       <div class="pf-texto">
-        <p class="pf-materia">Abogado con más de 21 años de experiencia</p>
+        <span class="rol ent">Entrevistado</span>
+        <p class="pf-materia">Experto en Derecho digital y Legal Tech</p>
         <h2>Germán Darío Flórez Acero</h2>
         <p class="intro">Especializado en arbitraje comercial nacional e internacional, derecho deportivo, propiedad intelectual, derecho digital y legal tech.</p>
         <div class="pf-filtros iv-filtros" role="group" aria-label="Secciones de la biografía">
@@ -282,7 +363,7 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
             <li><b>Árbitro</b><span>Centro de Arbitraje y Conciliación de la Cámara de Comercio de Cali</span></li>
             <li><b>Árbitro</b><span>Colegio de Abogados de Lima</span></li>
             <li><b>Director de la maestría en Innovación en Derecho Digital y Legal Tech</b><span>Universidad Sergio Arboleda</span></li>
-            <li><b>Presidente de la Asociación Colombiana de Legal Tech (ALT+CO)</b><span>Desde 2020</span></li>
+            <li><b>Presidente de la Asociación Colombiana de Legal Tech</b><span>ALT+CO, desde 2020</span></li>
             <li><b>Consultor</b><span>En diversas áreas del derecho</span></li>
           </ul>
         </div>
@@ -324,32 +405,7 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
   </div>
 </section>
 
-<!-- 4. DEBATE -->
-<section id="debate">
-  <div class="caja">
-    <h2>¿Reemplazará la IA a los abogados?</h2>
-    <p class="intro">Dos posturas en discusión. Alterna entre ellas para ver dónde está el consenso.</p>
-    <div class="interruptor" role="group" aria-label="Postura">
-      <button type="button" data-p="rad" aria-pressed="true">Automatización radical</button>
-      <button type="button" data-p="con" aria-pressed="false">Complemento del profesional</button>
-    </div>
-    <div class="postura" id="rad">
-      <span class="etiqueta rad">Postura minoritaria</span>
-      <h3>Una profesión casi totalmente automatizada</h3>
-      <p>Algunas voces, como las que se discuten en la comunidad r/Lawyertalk de Reddit, plantean que la IA podría asumir buena parte del trabajo jurídico.</p>
-      <div class="medidor" aria-hidden="true"><i data-w="25"></i></div>
-    </div>
-    <div class="postura" id="con" hidden>
-      <span class="etiqueta con">Consenso actual</span>
-      <h3>La tecnología potencia al profesional</h3>
-      <p>La IA se encarga de lo repetitivo y el abogado se concentra en la estrategia, la ética y la toma de decisiones.</p>
-      <div class="medidor" aria-hidden="true"><i data-w="80"></i></div>
-    </div>
-  </div>
-</section>
-
-<!-- 5. EL PROFESOR -->
-<section id="profesor" class="blanca">
+<section id="profesor">
   <div class="caja">
     <div class="pf-grid">
       <figure class="pf-foto">
@@ -357,7 +413,8 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
              onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'JB'}))">
       </figure>
       <div class="pf-texto">
-        <p class="pf-materia">Introducción a la filosofía</p>
+        <span class="rol prof">Profesor</span>
+        <p class="pf-materia">Docente responsable de la asignatura Introducción a la filosofía</p>
         <h2>José Rafael Bulla Pinto</h2>
         <p class="intro">Filósofo y abogado, docente de la Universidad Sergio Arboleda en las áreas de filosofía, lógica, teoría del conocimiento y ética.</p>
         <div class="pf-filtros" role="group" aria-label="Filtrar información">
@@ -389,7 +446,6 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
   </div>
 </section>
 
-<!-- 6. PRIMER SEMESTRE Y AUTORES -->
 <section id="semestre" class="oscura">
   <div class="caja">
     <h2>Para quienes inician Derecho</h2>
@@ -410,18 +466,44 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
   </div>
 </section>
 
-<!-- 6. FUENTES -->
+<section id="conclusion" class="blanca">
+  <div class="caja">
+    <h2>Conclusión</h2>
+    <p class="intro">Respuesta a las tres preguntas de la exposición.</p>
+    <ol class="concl">
+      <li><b>¿Qué está sucediendo?</b><p>La práctica jurídica se transforma por la tecnología, la exigencia de sostenibilidad y un nuevo perfil profesional.</p></li>
+      <li><b>¿Por qué?</b><p>Convergen avances tecnológicos, presiones económicas y educativas, y marcos como la Agenda 2030 y las políticas públicas de IA.</p></li>
+      <li><b>¿Qué consecuencias jurídicas tiene?</b><p>Plantea preguntas sobre responsabilidad, datos personales, sesgos, derecho de defensa y acceso a la justicia, que el derecho debe seguir resolviendo.</p></li>
+    </ol>
+    <p class="cierre">El alcance de la automatización sigue en debate. Lo que parece claro en las fuentes consultadas es que el abogado necesitará criterio, ética y formación tecnológica.</p>
+  </div>
+</section>
+
 <section id="fuentes">
   <div class="caja">
     <h2>Fuentes consultadas</h2>
-    <p class="intro">Para ampliar la información, abre cualquiera de estos enlaces.</p>
+    <p class="intro">Organizadas por tipo de fuente. Cada enlace indica su fecha de consulta.</p>
+    <h3 class="fgrupo">Organismos internacionales</h3>
+    <ul class="fuentes">
+      <li><a href="https://www.oecd.org/en/publications/oecd-employment-outlook-2023_08785bba-en/full-report/executive-summary_92f8509e.html" target="_blank" rel="noopener"><b>Employment Outlook 2023: la inteligencia artificial y el mercado laboral</b><span>OCDE</span></a></li>
+      <li><a href="https://unesdoc.unesco.org/ark:/48223/pf0000386670" target="_blank" rel="noopener"><b>Harnessing the era of artificial intelligence in higher education</b><span>UNESCO IESALC, 2023</span></a></li>
+      <li><a href="https://dominicanrepublic.un.org/es/129337-agenda-2030-y-los-derechos-humanos" target="_blank" rel="noopener"><b>Agenda 2030 y derechos humanos</b><span>Naciones Unidas</span></a></li>
+    </ul>
+    <h3 class="fgrupo">Universidades y revistas jurídicas</h3>
     <ul class="fuentes">
       <li><a href="https://www.uexternado.edu.co/departamento-de-derecho-de-los-negocios/determinando-el-futuro-del-derecho-tendencias-en-la-innovacion-legal/" target="_blank" rel="noopener"><b>Tendencias en la innovación legal</b><span>Universidad Externado de Colombia</span></a></li>
+      <li><a href="https://doi.org/10.11144/Javeriana.vj74.uaia" target="_blank" rel="noopener"><b>El uso de la inteligencia artificial en el arbitraje: amigos con derechos</b><span>Vniversitas, vol. 74, 2025</span></a></li>
+    </ul>
+    <h3 class="fgrupo">Normativa y documentos oficiales</h3>
+    <ul class="fuentes">
+      <li><a href="https://www.dnp.gov.co/publicaciones/Planeacion/Paginas/conpes-4144-hoja-de-ruta-colombia-inteligencia-artificial-retos-actuales-transformacion-futura.aspx?ID=291" target="_blank" rel="noopener"><b>CONPES 4144: hoja de ruta de Colombia en inteligencia artificial</b><span>Departamento Nacional de Planeación</span></a></li>
+    </ul>
+    <h3 class="fgrupo">Análisis, redes y foros (referencia complementaria)</h3>
+    <ul class="fuentes">
+      <li><a href="https://www.linkedin.com/pulse/2030-law-school-crisis-steve-schwartz-iyxhe" target="_blank" rel="noopener"><b>The 2030 Law School Crisis</b><span>LinkedIn</span></a></li>
       <li><a href="https://www.reddit.com/r/Lawyertalk/comments/1kra6io/according_to_bill_gates_lawyers_will_be_fully/" target="_blank" rel="noopener"><b>Debate sobre automatización</b><span>r/Lawyertalk, Reddit</span></a></li>
       <li><a href="https://www.facebook.com/UnifranzCbbaOficial/posts/c%C3%B3mo-est%C3%A1-cambiando-el-derecho-y-qu%C3%A9-habilidades-necesitar%C3%A1n-los-abogados-en-203/1911344650153944/" target="_blank" rel="noopener"><b>Habilidades de los abogados en 2030</b><span>Unifranz Cochabamba, Facebook</span></a></li>
       <li><a href="https://www.instagram.com/reel/DePOXXdEqt-/" target="_blank" rel="noopener"><b>Cómo cambia el derecho</b><span>Instagram</span></a></li>
-      <li><a href="https://dominicanrepublic.un.org/es/129337-agenda-2030-y-los-derechos-humanos" target="_blank" rel="noopener"><b>Agenda 2030 y derechos humanos</b><span>Naciones Unidas</span></a></li>
-      <li><a href="https://www.linkedin.com/pulse/2030-law-school-crisis-steve-schwartz-iyxhe" target="_blank" rel="noopener"><b>The 2030 Law School Crisis</b><span>LinkedIn</span></a></li>
     </ul>
   </div>
 </section>
@@ -464,19 +546,20 @@ tabs.forEach((t,i) => {
 
 /* ====== DEBATE ====== */
 const botones = document.querySelectorAll('.interruptor button');
-function medir(p){
-  const i = p.querySelector('i'); i.style.width = '0';
-  requestAnimationFrame(() => requestAnimationFrame(() => i.style.width = i.dataset.w + '%'));
-}
 botones.forEach(b => b.addEventListener('click', () => {
   botones.forEach(x => {
-    const on = x === b;
-    x.setAttribute('aria-pressed', on);
-    document.getElementById(x.dataset.p).hidden = !on;
+    x.setAttribute('aria-pressed', x === b);
+    document.getElementById(x.dataset.p).hidden = x !== b;
   });
-  medir(document.getElementById(b.dataset.p));
 }));
-medir(document.getElementById('rad'));
+
+/* ====== FECHA DE CONSULTA DE LAS FUENTES (cámbiala aquí) ====== */
+const FECHA_CONSULTA = "11 de noviembre de 2026";
+document.querySelectorAll('.fuentes a').forEach(a => {
+  const f = document.createElement('small');
+  f.textContent = 'Consultado el ' + FECHA_CONSULTA;
+  a.appendChild(f);
+});
 
 /* ====== PROFESOR: FILTROS ====== */
 const pfBotones = document.querySelectorAll('.pf-filtros button');
