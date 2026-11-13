@@ -191,6 +191,20 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
 .voto span{position:relative}
 .voto:hover{border-color:var(--cobalt)}
 .total{font-size:.85rem;color:var(--soft);margin:.4rem 0 0}
+.caso + .caso{margin-top:1.2rem}
+.resultado ul{margin:.4rem 0 .8rem;padding-left:1.2rem;color:#c6cfdf;display:grid;gap:.5rem}
+.resultado .sub-res{font:600 1rem var(--sans);color:#fff;margin:1rem 0 0}
+.resultado .aviso-c{font-size:.9rem;border-top:1px solid #2c3d5e;padding-top:.7rem}
+.tabla-wrap{overflow-x:auto;margin:0 0 1rem}
+.comp{border-collapse:collapse;width:100%;min-width:680px;background:var(--white)}
+.comp th,.comp td{border:1.5px solid var(--line);padding:.8rem 1rem;text-align:left;vertical-align:top;font-size:.95rem}
+.comp thead th{background:var(--ink);color:#fff;font-weight:600}
+.comp tbody th{background:var(--paper);width:150px}
+.comp td{color:var(--soft)}
+.normas + .sub{margin-top:2.5rem}
+.aviso-enc{max-width:760px;margin:0 0 1.5rem;padding:.9rem 1.2rem;background:var(--white);border-left:6px solid #d98a1f;border-radius:8px;color:var(--soft);font-size:.95rem}
+.tesis{font:600 clamp(1.6rem,3.2vw,2.4rem)/1.2 var(--serif);max-width:32ch;margin:0 0 1rem;letter-spacing:-.01em}
+.tesis2{max-width:62ch;font-size:1.15rem;margin:0 0 2rem;color:var(--soft)}
 #msg{margin:.8rem 0 0;font-size:.9rem;color:#ffd27a}
 #msg a{color:#fff}
 .tarjetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-bottom:2.5rem}
@@ -302,7 +316,7 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
         <button role="tab" id="t1" aria-controls="p1" aria-selected="true" style="--c:#2f5bff">Inteligencia artificial y automatización</button>
         <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1" style="--c:#8a5cf5">Nuevas habilidades indispensables</button>
         <button role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1" style="--c:#2f9e6e">Derecho ambiental y sostenibilidad</button>
-        <button role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1" style="--c:#d98a1f">Crisis y adaptación en la educación legal</button>
+        <button role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1" style="--c:#d98a1f">Adaptación de la educación legal</button>
       </div>
       <div class="panel">
         <div role="tabpanel" id="p1" aria-labelledby="t1" style="--c:#2f5bff">
@@ -331,13 +345,13 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
           <a class="fuente" href="https://dominicanrepublic.un.org/es/129337-agenda-2030-y-los-derechos-humanos" target="_blank" rel="noopener">Agenda 2030 y derechos humanos (ONU)</a>
         </div>
         <div role="tabpanel" id="p4" aria-labelledby="t4" style="--c:#d98a1f" hidden>
-          <h3>Facultades de derecho bajo presión</h3>
+          <h3>Facultades que revisan sus planes de estudio</h3>
           <ul>
-            <li>Las facultades enfrentan presiones financieras y estructurales para modernizar sus planes de estudio frente a la irrupción digital.</li>
-            <li>Es un fenómeno analizado en reportes como «The 2030 Law School Crisis», publicado en LinkedIn.</li>
+            <li>Las facultades de derecho están revisando sus currículos ante la irrupción digital. Una encuesta de la American Bar Association (2024) a 29 facultades de Estados Unidos encontró que más de la mitad ofrece cursos dedicados a la IA y que la mayoría contempla cambios curriculares.</li>
+            <li>Es una muestra pequeña y de un solo país: ilustra una tendencia, no un diagnóstico mundial.</li>
           </ul>
-          <div class="chips"><span class="chip">Planes de estudio</span><span class="chip">Presión financiera</span><span class="chip">Irrupción digital</span></div>
-          <a class="fuente" href="https://www.linkedin.com/pulse/2030-law-school-crisis-steve-schwartz-iyxhe" target="_blank" rel="noopener">Leer el reporte en LinkedIn</a>
+          <div class="chips"><span class="chip">Planes de estudio</span><span class="chip">Cursos sobre IA</span><span class="chip">Políticas de integridad académica</span></div>
+          <a class="fuente" href="https://americanbar.org/news/abanews/aba-news-archives/2024/06/aba-task-force-law-and-ai-survey" target="_blank" rel="noopener">Resultados de la encuesta (ABA)</a>
         </div>
       </div>
     </div>
@@ -351,7 +365,7 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
     <div class="tarjetas">
       <article><h3>Tecnológica</h3><p>La inteligencia artificial, los contratos inteligentes y el blockchain permiten automatizar tareas repetitivas, como la revisión de documentos.</p></article>
       <article><h3>Económica y laboral</h3><p>La OCDE analiza cómo la IA cambia tareas y empleos: puede crear nuevas tareas y exigir nuevas habilidades, y la evidencia sobre pérdida de empleo todavía es limitada.</p></article>
-      <article><h3>Social y educativa</h3><p>Las facultades de derecho enfrentan presiones para modernizar sus planes de estudio, y UNESCO ha publicado guías para integrar la IA en la educación superior.</p></article>
+      <article><h3>Social y educativa</h3><p>Las facultades de derecho están revisando sus planes de estudio: una encuesta de la ABA (2024) a 29 facultades de EE. UU. mostró que más de la mitad ya ofrece cursos de IA. UNESCO también publicó guías para integrar la IA en la educación superior.</p></article>
       <article><h3>Jurídica y ambiental</h3><p>La Agenda 2030, los ODS y políticas públicas como el CONPES 4144 de Colombia (2025) sobre IA marcan el marco en el que se ejerce la profesión.</p></article>
     </div>
   </div>
@@ -394,20 +408,25 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
 
 <section id="simulador" class="oscura">
   <div class="caja">
-    <h2>Simulador: una IA comete un error jurídico</h2>
-    <p class="intro">Enfréntate a un caso práctico. Elige una respuesta y analiza su fundamento. El caso está inspirado en Mata v. Avianca, resuelto en Estados Unidos en 2023.</p>
-    <div class="caso">
-      <h3>El caso</h3>
+    <h2>Simulador: la IA y la responsabilidad del abogado</h2>
+    <p class="intro">Dos casos prácticos. Elige una respuesta y analiza su fundamento. El primero está inspirado en Mata v. Avianca, resuelto en Estados Unidos en 2023.</p>
+    <div class="caso" data-caso="c1">
+      <h3>Caso 1: la sentencia inventada</h3>
       <p>Una firma de abogados utiliza inteligencia artificial para elaborar una demanda. La herramienta inventa una sentencia que no existe. El abogado presenta el documento ante un juez sin verificar las referencias.</p>
       <p class="pregunta">¿Qué debería suceder?</p>
-      <div class="opciones" role="radiogroup" aria-label="Respuestas posibles">
-        <label class="opcion"><input type="radio" name="sim" value="a"><span>La responsabilidad es exclusivamente de la empresa desarrolladora.</span></label>
-        <label class="opcion"><input type="radio" name="sim" value="b"><span>El abogado debe verificar el contenido y puede tener responsabilidad por presentarlo sin comprobarlo.</span></label>
-        <label class="opcion"><input type="radio" name="sim" value="c"><span>La responsabilidad desaparece porque el documento fue generado por IA.</span></label>
-      </div>
-      <button class="btn" id="analizar" type="button">Analizar mi respuesta</button>
-      <button class="btn sec" id="reintentar" type="button" hidden>Intentar de nuevo</button>
-      <div id="resultado" class="resultado" role="status" hidden></div>
+      <div class="opciones" role="radiogroup" aria-label="Respuestas posibles"><label class="opcion"><input type="radio" name="c1" value="a"><span>La responsabilidad es exclusivamente de la empresa desarrolladora.</span></label><label class="opcion"><input type="radio" name="c1" value="b"><span>El abogado debe verificar el contenido y puede tener responsabilidad por presentarlo sin comprobarlo.</span></label><label class="opcion"><input type="radio" name="c1" value="c"><span>La responsabilidad desaparece porque el documento fue generado por IA.</span></label></div>
+      <button class="btn analizar" type="button">Analizar mi respuesta</button>
+      <button class="btn sec reintentar" type="button" hidden>Intentar de nuevo</button>
+      <div class="resultado" role="status" hidden></div>
+    </div>
+    <div class="caso" data-caso="c2">
+      <h3>Caso 2: la responsabilidad profesional</h3>
+      <p>Un abogado usa una herramienta de IA para preparar un concepto jurídico y lo entrega a su cliente sin revisarlo. Después se descubre que contiene errores.</p>
+      <p class="pregunta">¿Puede el abogado trasladar su responsabilidad profesional a la herramienta de IA?</p>
+      <div class="opciones" role="radiogroup" aria-label="Respuestas posibles"><label class="opcion"><input type="radio" name="c2" value="a"><span>Sí, si la herramienta pertenece a una empresa reconocida.</span></label><label class="opcion"><input type="radio" name="c2" value="b"><span>No: la herramienta es un apoyo, pero el abogado sigue respondiendo por lo que firma y entrega.</span></label><label class="opcion"><input type="radio" name="c2" value="c"><span>Solo si informa a su cliente de que usó inteligencia artificial.</span></label></div>
+      <button class="btn analizar" type="button">Analizar mi respuesta</button>
+      <button class="btn sec reintentar" type="button" hidden>Intentar de nuevo</button>
+      <div class="resultado" role="status" hidden></div>
     </div>
   </div>
 </section>
@@ -427,13 +446,24 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
         <dl><dt>Qué regula</dt><dd>Modifica la Ley 1480 de 2011 (Estatuto del Consumidor) y crea medidas de protección para el consumidor de comercio electrónico.</dd><dt>Cómo se aplica</dt><dd>Fija reglas para quienes ofrecen productos por medios electrónicos, como canales de atención de fácil acceso y un máximo de 15 días calendario para devolver el dinero tras el retracto.</dd><dt>Desafío hacia 2030</dt><dd>Cómo se cumplen estas reglas cuando la oferta o la atención al consumidor las gestionan sistemas automatizados.</dd></dl>
         <a href="https://www1.funcionpublica.gov.co/eva/gestornormativo/norma_pdf.php?i=257116" target="_blank" rel="noopener">Ver texto oficial</a></article>
     </div>
+    <h3 class="sub">Dos enfoques: Colombia y la Unión Europea</h3>
+    <div class="tabla-wrap"><table class="comp">
+      <thead><tr><th></th><th>Colombia: CONPES 4144</th><th>Unión Europea: AI Act</th></tr></thead>
+      <tbody>
+        <tr><th>Naturaleza jurídica</th><td>Documento de política pública que orienta la acción del Estado; en principio no es una ley que imponga obligaciones directas a los particulares.</td><td>Reglamento de la Unión Europea (2024/1689), jurídicamente vinculante.</td></tr>
+        <tr><th>Alcance</th><td>Hoja de ruta nacional para el desarrollo y la adopción de la IA.</td><td>Marco basado en riesgos: prohíbe ciertas prácticas, regula los sistemas de alto riesgo y fija obligaciones de transparencia y para modelos de IA de propósito general.</td></tr>
+        <tr><th>Implementación</th><td>Plan de acción con período de implementación hasta 2030 y seguimiento semestral.</td><td>En vigor desde el 1 de agosto de 2024 y aplicable desde el 2 de agosto de 2026, con excepciones: las reglas de alto riesgo en áreas sensibles se aplican desde el 2 de diciembre de 2027 y las de productos regulados desde el 2 de agosto de 2028. La supervisión corresponde a la Oficina de IA y a las autoridades de los Estados miembros.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="nota">No son instrumentos equivalentes: uno orienta políticas públicas y el otro impone obligaciones. Compararlos sirve para discutir cómo puede regularse la IA, no para afirmar que uno sustituye al otro. Fechas de la UE según la Comisión Europea, tras el Digital Omnibus de 2026. <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener">Fuente</a></p>
   </div>
 </section>
 
 <section id="encuesta">
   <div class="caja">
     <h2>Tu opinión cuenta</h2>
-    <p class="intro">Responde sin crear una cuenta. En la exposición, el público puede votar y quien presenta registra los votos aquí. Los resultados se guardan solo en este navegador.</p>
+    <p class="intro">Responde sin crear una cuenta. En la exposición, el público puede votar a mano alzada y quien presenta registra los votos aquí.</p>
+    <p class="aviso-enc"><b>Importante:</b> los votos se guardan solo en este dispositivo y navegador. No es una encuesta global: cada dispositivo muestra sus propios resultados.</p>
     <div class="encuesta" id="encuesta-preguntas"></div>
     <p><button class="btn sec" id="reiniciar" type="button" style="color:var(--ink);border-color:var(--ink);margin-left:0">Reiniciar votos</button></p>
   </div>
@@ -585,13 +615,15 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
 <section id="conclusion" class="blanca">
   <div class="caja">
     <h2>Conclusión</h2>
-    <p class="intro">Respuesta a las tres preguntas de la exposición.</p>
+    <p class="tesis">La transformación tecnológica no elimina la necesidad del Derecho; modifica las condiciones bajo las cuales se ejerce.</p>
+    <p class="tesis2">En consecuencia, el desafío no consiste únicamente en adaptar al abogado a nuevas herramientas, sino en garantizar que su utilización respete los derechos fundamentales, el debido proceso, la responsabilidad profesional y el acceso a la justicia.</p>
+    <p class="intro">Así responde la exposición a sus tres preguntas:</p>
     <ol class="concl">
-      <li><b>¿Qué está sucediendo?</b><p>La práctica jurídica se transforma por la tecnología, la exigencia de sostenibilidad y un nuevo perfil profesional.</p></li>
-      <li><b>¿Por qué?</b><p>Convergen avances tecnológicos, presiones económicas y educativas, y marcos como la Agenda 2030 y las políticas públicas de IA.</p></li>
-      <li><b>¿Qué consecuencias jurídicas tiene?</b><p>Plantea preguntas sobre responsabilidad, datos personales, sesgos, derecho de defensa y acceso a la justicia, que el derecho debe seguir resolviendo.</p></li>
+      <li><b>¿Qué está sucediendo?</b><p>La práctica jurídica cambia por la tecnología, la exigencia de sostenibilidad y un nuevo perfil profesional.</p></li>
+      <li><b>¿Por qué?</b><p>Convergen avances tecnológicos, cambios económicos y educativos, y marcos normativos nacionales e internacionales.</p></li>
+      <li><b>¿Qué consecuencias jurídicas tiene?</b><p>Obliga a discutir responsabilidad, datos personales, sesgos, derecho de defensa y acceso a la justicia, como muestran el caso Mata v. Avianca y las normas colombianas y europeas.</p></li>
     </ol>
-    <p class="cierre">El alcance de la automatización sigue en debate. Lo que parece claro en las fuentes consultadas es que el abogado necesitará criterio, ética y formación tecnológica.</p>
+    <p class="cierre">El alcance de la automatización sigue en debate. Lo que propone esta tesis es dónde poner la atención: en los derechos y garantías, y no solo en las herramientas.</p>
   </div>
 </section>
 
@@ -609,6 +641,8 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
       <li><a href="https://unesdoc.unesco.org/ark:/48223/pf0000386670" target="_blank" rel="noopener"><b>Harnessing the era of artificial intelligence in higher education</b><span>UNESCO IESALC, 2023</span></a></li>
       <li><a href="https://dominicanrepublic.un.org/es/129337-agenda-2030-y-los-derechos-humanos" target="_blank" rel="noopener"><b>Agenda 2030 y derechos humanos</b><span>Naciones Unidas</span></a></li>
       <li><a href="https://storage.courtlistener.com/recap/gov.uscourts.nysd.575368/gov.uscourts.nysd.575368.54.0_4.pdf" target="_blank" rel="noopener"><b>Mata v. Avianca, Inc., opinión y orden de sanciones</b><span>Tribunal Federal del Distrito Sur de Nueva York, 22 de junio de 2023</span></a></li>
+      <li><a href="https://americanbar.org/news/abanews/aba-news-archives/2024/06/aba-task-force-law-and-ai-survey" target="_blank" rel="noopener"><b>Resultados de la AI and Legal Education Survey</b><span>American Bar Association y ABA Task Force on Law and Artificial Intelligence, 24 de junio de 2024</span></a></li>
+      <li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener"><b>Marco regulatorio de la IA (AI Act)</b><span>Comisión Europea</span></a></li>
     </ul>
     <h3 class="fgrupo">Fuentes académicas</h3>
     <ul class="fuentes">
@@ -619,7 +653,7 @@ h2{font:600 clamp(1.9rem,4vw,3rem)/1.12 var(--serif);margin:0 0 .6rem;letter-spa
     <ul class="fuentes">
       <li><a href="https://www.americanbar.org/content/aba-cms-dotorg/en/groups/litigation/resources/litigation-news/2023/use-chatgpt-research-bogus-cases-sanctions" target="_blank" rel="noopener"><b>Use of ChatGPT for research leads to sanctions over bogus cases</b><span>American Bar Association, Litigation News, 2023</span></a></li>
       <li><a href="https://www.telesemana.com/blog/2025/02/17/colombia-publico-su-politica-nacional-de-inteligencia-artificial/" target="_blank" rel="noopener"><b>Colombia publicó su Política Nacional de Inteligencia Artificial</b><span>Telesemana, 17 de febrero de 2025</span></a></li>
-      <li><a href="https://www.linkedin.com/pulse/2030-law-school-crisis-steve-schwartz-iyxhe" target="_blank" rel="noopener"><b>The 2030 Law School Crisis</b><span>Steve Schwartz, LinkedIn</span></a></li>
+      
       <li><a href="https://www.reddit.com/r/Lawyertalk/comments/1kra6io/according_to_bill_gates_lawyers_will_be_fully/" target="_blank" rel="noopener"><b>Debate sobre automatización</b><span>Comunidad r/Lawyertalk, Reddit</span></a></li>
     </ul>
   </div>
@@ -703,25 +737,42 @@ document.querySelectorAll('.seg').forEach(c => {
 });
 
 /* ====== SIMULADOR ====== */
-const RESPUESTAS = {
-  a: {t:'Respuesta incompleta', c:'parcial', x:'El desarrollador puede tener responsabilidades según el contrato y la normativa aplicable, pero eso no elimina el deber del abogado: es quien firma y presenta el escrito ante el juez. Decir que la responsabilidad es «exclusivamente» de la empresa deja por fuera ese deber.'},
-  b: {t:'Respuesta más sólida', c:'', x:'El abogado debe verificar lo que presenta. En Mata v. Avianca (2023), un tribunal de Nueva York sancionó a los abogados con una multa de 5.000 dólares por presentar jurisprudencia inexistente generada por ChatGPT. El alcance exacto de la responsabilidad depende de cada ordenamiento, pero esta respuesta recoge mejor el deber de diligencia.', l:'https://storage.courtlistener.com/recap/gov.uscourts.nysd.575368/gov.uscourts.nysd.575368.54.0_4.pdf'},
-  c: {t:'Respuesta incorrecta', c:'mala', x:'Que un documento haya sido generado por IA no elimina la responsabilidad de quien lo presenta. El escrito lo firma y lo presenta el abogado, que responde por su contenido.'}
+const MATA = '<p class="sub-res">Análisis del caso Mata v. Avianca</p><ul>' +
+  '<li><b>Deber de verificación.</b> Las citas inexistentes llegaron al tribunal en un escrito de los abogados. Cuando la contraparte advirtió que no podía encontrarlas, siguieron defendiéndolas en lugar de verificarlas.</li>' +
+  '<li><b>Responsabilidad profesional.</b> El tribunal sancionó a los dos abogados y a su firma. Concluyó que actuaron de mala fe: evitaron conscientemente las señales de que las citas eran falsas e hicieron afirmaciones engañosas al tribunal.</li>' +
+  '<li><b>Consecuencias procesales.</b> La sanción fue una multa de 5.000 dólares. El tribunal subrayó que presentar opiniones judiciales falsas causa múltiples daños.</li></ul>' +
+  '<p class="aviso-c">Es un caso estadounidense y no constituye precedente vinculante en Colombia. Sirve como referencia comparada para discutir los deberes de diligencia del abogado.</p>';
+const LINK_MATA = '<p><a href="https://storage.courtlistener.com/recap/gov.uscourts.nysd.575368/gov.uscourts.nysd.575368.54.0_4.pdf" target="_blank" rel="noopener">Ver la decisión judicial</a></p>';
+const CASOS = {
+  c1: {
+    a: {t:'Respuesta incompleta', c:'parcial', x:'El desarrollador puede tener responsabilidades según el contrato y la normativa aplicable, pero eso no elimina el deber del abogado: es quien firma y presenta el escrito ante el juez. Decir que la responsabilidad es «exclusivamente» de la empresa deja por fuera ese deber.'},
+    b: {t:'Respuesta más sólida', c:'', x:'El abogado debe verificar lo que presenta. El alcance exacto de la responsabilidad depende de cada ordenamiento, pero esta respuesta recoge mejor el deber de diligencia.'},
+    c: {t:'Respuesta incorrecta', c:'mala', x:'Que un documento haya sido generado por IA no elimina la responsabilidad de quien lo presenta. El escrito lo firma y lo presenta el abogado, que responde por su contenido.'},
+    extra: MATA + LINK_MATA
+  },
+  c2: {
+    a: {t:'Respuesta incorrecta', c:'mala', x:'La reputación de la herramienta no traslada la responsabilidad. Puede ser un dato al evaluar la diligencia, pero no sustituye la revisión del abogado.'},
+    b: {t:'Respuesta más sólida', c:'', x:'El abogado puede apoyarse en herramientas, pero responde por el trabajo que entrega: diligencia, competencia y verificación. En Mata v. Avianca, los abogados alegaron que la herramienta los había engañado y aun así fueron sancionados.'},
+    c: {t:'Respuesta incompleta', c:'parcial', x:'Informar al cliente puede ser importante para la transparencia y la confianza, pero informar no traslada la responsabilidad. La divulgación y la responsabilidad son cuestiones distintas.'}
+  }
 };
-const resultado = document.getElementById('resultado');
-const analizar = document.getElementById('analizar');
-const reintentar = document.getElementById('reintentar');
-analizar.addEventListener('click', () => {
-  const sel = document.querySelector('input[name=sim]:checked');
-  if (!sel) { resultado.hidden = false; resultado.className = 'resultado parcial'; resultado.innerHTML = '<b>Elige una respuesta</b><p>Selecciona una opción antes de analizarla.</p>'; return; }
-  const r = RESPUESTAS[sel.value];
-  resultado.className = 'resultado ' + r.c;
-  resultado.innerHTML = '<b>' + r.t + '</b><p>' + r.x + '</p>' + (r.l ? '<p><a href="' + r.l + '" target="_blank" rel="noopener">Ver la decisión judicial</a></p>' : '');
-  resultado.hidden = false; reintentar.hidden = false;
-});
-reintentar.addEventListener('click', () => {
-  document.querySelectorAll('input[name=sim]').forEach(i => i.checked = false);
-  resultado.hidden = true; reintentar.hidden = true;
+document.querySelectorAll('.caso').forEach(caso => {
+  const id = caso.dataset.caso;
+  const res = caso.querySelector('.resultado');
+  const otra = caso.querySelector('.reintentar');
+  caso.querySelector('.analizar').addEventListener('click', () => {
+    const sel = caso.querySelector('input[name=' + id + ']:checked');
+    res.hidden = false;
+    if (!sel) { res.className = 'resultado parcial'; res.innerHTML = '<b>Elige una respuesta</b><p>Selecciona una opción antes de analizarla.</p>'; return; }
+    const r = CASOS[id][sel.value];
+    res.className = 'resultado ' + r.c;
+    res.innerHTML = '<b>' + r.t + '</b><p>' + r.x + '</p>' + (CASOS[id].extra || '');
+    otra.hidden = false;
+  });
+  otra.addEventListener('click', () => {
+    caso.querySelectorAll('input').forEach(i => i.checked = false);
+    res.hidden = true; otra.hidden = true;
+  });
 });
 
 /* ====== ENCUESTA (los votos se guardan solo en este navegador) ====== */
